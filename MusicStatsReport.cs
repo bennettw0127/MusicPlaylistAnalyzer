@@ -18,7 +18,6 @@ namespace MusicPlaylistAnalyzer
 
                 return report;
             }
-            //Q1
             var moreThan200Plays = from musicStats in musicStatsList
                                    where musicStats.Plays >= 200
                                    select musicStats;
@@ -35,7 +34,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q2
             var altsongs = from musicStats in musicStatsList
                            where musicStats.Genre == "Alternative"
                            select musicStats;
@@ -49,7 +47,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q3
             report += "Number of Hip-Hop/Rap songs:";
             var hrsongs = from musicStats in musicStatsList
                            where musicStats.Genre == "Hip-Hop/Rap"
@@ -63,7 +60,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q4
             report += "Songs from the album Welcome to the Fishbowl:\n";
             var alsongs = from musicStats in musicStatsList
                            where musicStats.Album == "Welcome to the Fishbowl"
@@ -79,7 +75,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q5
             report += "Song from before 1970:\n";
             var oldsongs = from musicStats in musicStatsList
                            where musicStats.Year <= 1970
@@ -95,7 +90,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q6
             report += "Song names longer than 85 characters:\n";
             var songname = from musicStats in musicStatsList
                            where musicStats.Name.Length > 85
@@ -108,7 +102,6 @@ namespace MusicPlaylistAnalyzer
             {
                 report += "not available\n";
             }
-            //Q7
             report += "What is the longest song?(longest in Time)\n";
             var longest = from musicStats in musicStatsList where musicStats.Time == 
                           ((from stats in musicStatsList select stats.Time).Max()) select musicStats;
